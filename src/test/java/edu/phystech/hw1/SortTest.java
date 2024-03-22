@@ -1,5 +1,6 @@
 package edu.phystech.hw1;
 
+import java.sql.SQLOutput;
 import java.util.Arrays;
 
 import org.junit.Test;
@@ -8,7 +9,18 @@ import org.junit.jupiter.api.Assertions;
 public class SortTest {
 
     private static int[] sort(int[] nums) {
-        return nums;
+        int length = nums.length;
+        int[] sorted_nums = nums.clone();
+        for (int i = 0; i < length - 1; i++) {
+            for (int j = 0; j < length - 1; j++) {
+                if (sorted_nums[j] > sorted_nums[j + 1]) {
+                    int tmp = sorted_nums[j];
+                    sorted_nums[j] = sorted_nums[j + 1];
+                    sorted_nums[j + 1] = tmp;
+                }
+            }
+        }
+        return sorted_nums;
     }
 
     @Test
