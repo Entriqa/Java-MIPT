@@ -1,6 +1,5 @@
 package edu.phystech.hw1;
 
-import java.sql.SQLOutput;
 import java.util.Arrays;
 
 import org.junit.Test;
