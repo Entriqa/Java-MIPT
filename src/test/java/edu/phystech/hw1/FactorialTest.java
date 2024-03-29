@@ -7,9 +7,12 @@ import org.junit.jupiter.api.Assertions;
 
 public class FactorialTest {
 
-
     private static long factorial(int n) {
-        return 0;
+        long result = 1;
+        for (int i = 1; i < n + 1; i++) {
+            result *= i;
+        }
+        return result;
     }
 
     @Test

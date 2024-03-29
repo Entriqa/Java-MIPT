@@ -9,6 +9,20 @@ import org.junit.jupiter.api.Assertions;
 
 public class FindNumberTest {
     private static int findNumber(int[] input, int element) {
+        int left = 0;
+        int right = input.length - 1;
+        while (left <= right) {
+            int middle = (left + right) / 2;
+            if (input[middle] == element) {
+                return middle;
+            }
+            if (input[middle] > element) {
+                right = middle - 1;
+            } else {
+                left = middle + 1;
+            }
+
+        }
         return -1;
     }
 
@@ -25,8 +39,8 @@ public class FindNumberTest {
 
     @Test
     public void worksCornerCases() {
-        Assertions.assertEquals(-1, findNumber(new int[] {}, 10));
-        Assertions.assertEquals(0, findNumber(new int[] {1}, 1));
+        Assertions.assertEquals(-1, findNumber(new int[]{}, 10));
+        Assertions.assertEquals(0, findNumber(new int[]{1}, 1));
     }
 
     @Test
@@ -43,7 +57,7 @@ public class FindNumberTest {
         for (int i = 0; i < 1_000; ++i) {
             long startTime = System.nanoTime();
             int result = findNumber(bigInput, elementToFind);
-            long endTime =  System.nanoTime();
+            long endTime = System.nanoTime();
             Assertions.assertEquals(elementToFind, bigInput[result]);
             findNumberTime += (endTime - startTime);
         }
@@ -51,7 +65,7 @@ public class FindNumberTest {
         for (int i = 0; i < 1_000; ++i) {
             long startTime = System.nanoTime();
             int result = asList.indexOf(elementToFind);
-            long endTime =  System.nanoTime();
+            long endTime = System.nanoTime();
             Assertions.assertEquals(elementToFind, asList.get(result));
             naiveTime += (endTime - startTime);
         }

@@ -8,7 +8,18 @@ import org.junit.jupiter.api.Assertions;
 public class SortTest {
 
     private static int[] sort(int[] nums) {
-        return nums;
+        int length = nums.length;
+        int[] sortedNums = nums.clone();
+        for (int i = 0; i < length - 1; i++) {
+            for (int j = 0; j < length - 1; j++) {
+                if (sortedNums[j] > sortedNums[j + 1]) {
+                    int tmp = sortedNums[j];
+                    sortedNums[j] = sortedNums[j + 1];
+                    sortedNums[j + 1] = tmp;
+                }
+            }
+        }
+        return sortedNums;
     }
 
     @Test

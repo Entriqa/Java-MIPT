@@ -8,7 +8,12 @@ import org.junit.jupiter.api.Assertions;
 public class ReverseTest {
 
     private static int[] reverse(int[] nums) {
-        return nums;
+        int len = nums.length;
+        int[] reverseNums = new int[len];
+        for (int i = 1; i <= len; i++) {
+            reverseNums[len - i] = nums[i - 1];
+        }
+        return reverseNums;
     }
 
 
