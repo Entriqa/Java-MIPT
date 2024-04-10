@@ -48,7 +48,7 @@ class IsNumberASquareOfAnotherNumber implements Predicate<Integer> {
 
 // Возвращает четные числа, начиная с from включительно, если в from нечетное число, то начиная с первого четного с from
 class EvenNumberSupplier implements Supplier<Integer> {
-    private int number;
+    private long number;
 
     public EvenNumberSupplier(int from) {
         this.number = from;
@@ -62,7 +62,7 @@ class EvenNumberSupplier implements Supplier<Integer> {
         else {
             number += 3;
         }
-        return number - 2;
+        return (int) (number - 2);
     }
 }
 
