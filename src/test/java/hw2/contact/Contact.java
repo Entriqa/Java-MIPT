@@ -5,7 +5,7 @@ record Contact(String username, String email) implements Comparable<Contact> {
     public static final String UNKNOWN_EMAIL = "unknown";
 
     Contact {
-        if (username.trim().isEmpty()) {
+        if (username.isBlank()) {
             throw new InvalidContactFieldException("username");
         }
         if (email != null && !email.endsWith("@gmail.com")) {
