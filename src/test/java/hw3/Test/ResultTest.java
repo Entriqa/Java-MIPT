@@ -1,4 +1,4 @@
-package hw3;
+package hw3.Test;
 
 
 import hw3.result.Failure;

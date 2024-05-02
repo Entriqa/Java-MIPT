@@ -1,8 +1,9 @@
-package hw3;
+package hw3.Test;
 
 import java.util.Collections;
 import java.util.Set;
 
+import hw3.SetUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

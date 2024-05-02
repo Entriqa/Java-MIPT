@@ -6,11 +6,6 @@ import java.util.function.Function;
  * @author kzlv4natoly
  */
 public record Success<T>(T value) implements Result<T> {
-//    private final T value;
-//    public Success(T value) {
-//        this.value = value;
-//    }
-
     @Override
     public boolean isFailure() {
         return false;

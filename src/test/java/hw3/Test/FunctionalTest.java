@@ -1,8 +1,9 @@
-package hw3;
+package hw3.Test;
 
 import java.util.List;
 import java.util.function.Function;
 
+import hw3.Functional;
 import hw3.shape.Disk;
 import hw3.shape.Shape;
 import org.junit.jupiter.api.Assertions;
