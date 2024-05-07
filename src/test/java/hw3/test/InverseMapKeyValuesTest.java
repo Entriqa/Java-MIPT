@@ -1,4 +1,4 @@
-package hw3.Test;
+package hw3.test;
 
 import java.util.*;
 
